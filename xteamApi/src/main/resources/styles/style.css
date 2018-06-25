@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+html {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Poiret One', cursive;
+  letter-spacing: 3px;
+  color: ghostwhite;
+  font-size:25px;
+}
+
+body {
+  background-size: cover;
+  background: url(https://images.unsplash.com/photo-1496450080853-5f78c43af9e9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f54e10ce09c4da2615d286adf51dcbe3&auto=format&fit=crop&w=1950&q=80);
+}
+
+body > main {
+  position: absolute;
+  left: 15%;
+  top: 15%;
+}
+
+body > main > a {
+  text-decoration: none;
+  color: ghostwhite;
+}
+
+body > main > a:hover {
+  color: gray;
+  opacity: .6;
+}

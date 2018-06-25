@@ -1,0 +1,59 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo:3.4
+    hostname: mongo
+    command: []
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+    networks:
+      - x-team-network
+    depends_on:
+      - "redis"
+
+  redis:
+    image: redis:4.0.5-alpine
+    hostname: redis
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdb
+    networks:
+      - x-team-network
+
+  x-team-api:
+    build:
+      context: ../xteamApi
+    image: x-team-api-tpd
+    environment:
+      - SPRING_DATA_MONGODB_HOST=mongo
+      - SPRING_DATA_REDIS_HOST=redis
+    ports:
+      - "8080:8080"
+    networks:
+      - x-team-network
+    depends_on:
+      - "mongo"
+      - "redis"
+
+  x-team-client:
+    build:
+      context: ../xteamClient
+    image: x-team-client-tpd
+    ports:
+      - "8900:80"
+    networks:
+      - x-team-network
+    depends_on:
+      - "x-team-api"
+
+volumes:
+  mongodb:
+  redisdb:
+
+networks:
+  x-team-network:

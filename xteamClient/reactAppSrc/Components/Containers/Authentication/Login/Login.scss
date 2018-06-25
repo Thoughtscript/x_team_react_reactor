@@ -1,0 +1,104 @@
+$mainColor: #ad5389;
+$offsetColor: white;
+$darkColor: blue;
+
+@keyframes slidein {
+  from { left: -200%; opacity: .2}
+  50% {left: -100%; opacity: .5}
+  60% {left: -10%; opacity: .65}
+  to   { left: -0%; opacity: .8 }
+}
+
+main.login {
+  & > .top {
+    grid-row: 1/20;
+    grid-column: 1/6;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background: #c0392b;
+    background: -webkit-linear-gradient(to right, #c0392b, #8e44ad);
+    background: linear-gradient(to right, #c0392b, #8e44ad);
+    animation: 10s infinite slidein;
+    opacity: 0.8;
+    box-shadow: 1px 2px 2px 1px black;
+    border: 1px dashed gray;
+    border-radius: 15px;
+    margin: 5px;
+    & > .text {
+      grid-column: 2;
+      grid-row: 10;
+      text-align: center;
+      color: $offsetColor;
+    }
+    & > .text:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & > .content {
+    grid-row: 20/45;
+    grid-column: 1/6;
+    color: $offsetColor;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(12, .25fr);
+    background: #c0392b;
+    background: -webkit-linear-gradient(to right, #c0392b, #8e44ad);
+    background: linear-gradient(to right, #c0392b, #8e44ad);
+    animation: 10s infinite slidein;
+    opacity: 0.8;
+    box-shadow: 1px 2px 2px 1px black;
+    border: 1px dashed gray;
+    border-radius: 15px;
+    margin: 5px;
+    & > .text {
+      grid-column: 2;
+      grid-row: 6;
+      text-align: center;
+      color: $offsetColor;
+    }
+  }
+
+  & > .more {
+    grid-row: 45 /75;
+    grid-column: 1/6;
+    display: grid;
+    background: #c0392b;
+    background: -webkit-linear-gradient(to right, #c0392b, #8e44ad);
+    background: linear-gradient(to right, #c0392b, #8e44ad);
+    animation: 10s infinite slidein;
+    opacity: 0.8;
+    box-shadow: 1px 2px 2px 1px black;
+    border: 1px dashed gray;
+    border-radius: 15px;
+    margin: 5px;
+    & > .text {
+      grid-row: 2;
+      text-align: center;
+      color: $offsetColor;
+    }
+  }
+
+  & > .more {
+    grid-row: 45 /75;
+    grid-column: 1/6;
+    display: grid;
+    background: #c0392b;
+    background: -webkit-linear-gradient(to right, #c0392b, #8e44ad);
+    background: linear-gradient(to right, #c0392b, #8e44ad);
+    animation: 10s infinite slidein;
+    opacity: 0.8;
+    box-shadow: 1px 2px 2px 1px black;
+    border: 1px dashed gray;
+    border-radius: 15px;
+    margin: 5px;
+    & > .text {
+      grid-row: 2;
+      text-align: center;
+      color: $offsetColor;
+    }
+  }
+}
+
+
